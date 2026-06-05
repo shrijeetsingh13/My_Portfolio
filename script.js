@@ -1,0 +1,52 @@
+const themeSlider = document.getElementById("theme-slider");
+const indicator = document.querySelector(".toggle-indicator");
+const pricingSliderBtns = document.querySelectorAll(".toggle-option");
+const planPriceStarter = document.querySelector(".planPrice-starter");
+const planPricePro = document.querySelector(".planPrice-pro");
+const planPriceBusiness = document.querySelector(".planPrice-business");
+const planPrices = document.querySelectorAll(".planPriceTime");
+
+themeSlider.addEventListener("click", function () {
+  const root = document.documentElement;
+  if (root.dataset.theme === "light") {
+    root.dataset.theme = "dark";
+    console.log("Dark theme activated");
+  } else {
+    root.dataset.theme = "light";
+    console.log("Light theme activated");
+  }
+});
+
+function animatePriceChange(priceEl, newValue) {
+  priceEl.classList.add("is-changing");
+
+  setTimeout(() => {
+    priceEl.textContent = `$${newValue}`;
+    priceEl.classList.remove("is-changing");
+  }, 400);
+}
+
+pricingSliderBtns.forEach((button, index) => {
+  button.addEventListener("click", (e) => {
+    pricingSliderBtns.forEach((o) => o.classList.remove("active"));
+    e.target.classList.toggle("active");
+    indicator.style.transform = `translateX(${index * 100}%)`;
+    if (e.target.dataset.value === "yearly") {
+      animatePriceChange(planPriceStarter, "0");
+      animatePriceChange(planPricePro, "120");
+      animatePriceChange(planPriceBusiness, "480");
+      planPriceStarter.textContent = "$0";
+      planPricePro.textContent = "$120";
+      planPriceBusiness.textContent = "$480";
+      planPrices.forEach((price) => (price.textContent = "/yr"));
+    } else {
+      animatePriceChange(planPriceStarter, "0");
+      animatePriceChange(planPricePro, "12");
+      animatePriceChange(planPriceBusiness, "49");
+      planPriceStarter.textContent = "$0";
+      planPricePro.textContent = "$12";
+      planPriceBusiness.textContent = "$49";
+      planPrices.forEach((price) => (price.textContent = "/mo"));
+    }
+  });
+});

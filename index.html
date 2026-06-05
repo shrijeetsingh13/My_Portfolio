@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>FlowState | The Great AI Generator</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <a href="#main" class="logo">FlowState</a>
+      <ul class="navLinks">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="cornerBtns">
+        <button class="button getStartedBtn"><a href="#contact">Get Started</a></button>
+      </div>
+      <div class="slider-container">
+        <span>Dark</span>
+        <input type="range" id="theme-slider" min="0" max="1" value="0" />
+        <span>Light</span>
+      </div>
+    </nav>
+  </header>
+  <main class="main">
+    <section class="heroSection" id="main">
+      <div class="leftHeroContent">
+        <h1 class="heroHeading">
+          Master Your Focus. <br />
+          Let AI Handle The <span class="flowSpan">Flow</span>.
+        </h1>
+        <p class="heroSubHeading">
+          FlowState intelligently prioritizes your tasks, silences
+          distractions, and builds a schedule that actually works for you.
+          Stop managing tools—start doing work.
+        </p>
+        <button class="button heroBtn">Get Started for Free</button>
+      </div>
+      <div class="rightHeroContent">
+        <div class="heroImageHolder">
+          <img class="heroImg" src="images/heroImg.png" alt="FlowState AI Generator" />
+        </div>
+      </div>
+    </section>
+    <section class="features" id="features">
+      <h2 class="sectionHeading">Features We Provide</h2>
+      <div class="bentoGrid">
+        <div class="bentoBox bentoBox1">
+          <div class="bentoBoxContent">
+            <h3 class="bentoBoxHeading">Smart Prioritization</h3>
+            <p class="bentoBoxSubHeading">
+              Our AI learns your workflow to automatically highlight the tasks
+              that move the needle. Stop busywork; start high-impact work.
+              With intelligent prioritization, you’ll always know what to
+              tackle next. This is the best you can get at managing your
+              tasks.
+            </p>
+          </div>
+        </div>
+        <div class="bentoBox bentoBox2">
+          <div class="bentoBoxContent">
+            <h3 class="bentoBoxHeading">Zero Distractions</h3>
+            <p class="bentoBoxSubHeading">
+              FlowState uses AI to identify and block distractions in your
+              workflow. Whether it's social media, unnecessary notifications,
+              or time-wasting websites, our tool keeps you focused on what
+              matters most. Experience a distraction-free work environment
+              tailored to your needs. Enter a state of flow with a single
+              click. We silence the noise so you can focus on what matters.
+            </p>
+          </div>
+        </div>
+        <div class="bentoBox bentoBox3">
+          <div class="bentoBoxContent">
+            <h3 class="bentoBoxHeading">Always in Sync</h3>
+            <p class="bentoBoxSubHeading">
+              Seamlessly transition from your desktop to your mobile. Your
+              focus doesn't have a boundary; neither should your tools.
+            </p>
+          </div>
+        </div>
+        <div class="bentoBox bentoBox4">
+          <div class="bentoBoxContent">
+            <h3 class="bentoBoxHeading">Visualize Your Flow</h3>
+            <p class="bentoBoxSubHeading">
+              Get deep insights into your productivity peaks. Track your
+              'Focus Score' and optimize your day for maximum output.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="pricing" id="pricing">
+      <h2 class="pricingHeading">Our plans and prices</h2>
+      <div class="billing-toggle" id="billingToggle">
+        <div class="toggle-indicator"></div>
+        <button class="toggle-option active" data-value="monthly">
+          Monthly
+        </button>
+        <button class="toggle-option" data-value="yearly">Yearly</button>
+      </div>
+      <div class="pricingPlanCards">
+        <div class="priceCard">
+          <div class="priceHeadingSpans">
+            <span class="planCardHeading">Starter</span>
+            <span class="planPrice planPrice-starter">$0</span>
+            <span class="planPriceTime">/mo</span>
+          </div>
+          <ul class="planFeaturesList">
+            <li class="planFeature">3 Smart Focus Sessions Per Day</li>
+            <li class="planFeature">Basic Task Analytics</li>
+            <li class="planFeature">Single Device Synchronization</li>
+            <li class="planFeature">Standard Integrations</li>
+            <li class="planFeature">Community Support Access</li>
+          </ul>
+          <button class="button priceButton">Get Plan</button>
+        </div>
+        <div class="priceCard priceCard--pro">
+          <div class="priceHeadingSpans">
+            <span class="planCardHeading">Pro</span>
+            <span class="planPrice planPrice-pro">$12</span>
+            <span class="planPriceTime">/mo</span>
+          </div>
+          <ul class="planFeaturesList">
+            <li class="planFeature">Everything in Starter, plus:</li>
+            <li class="planFeature">Unlimited Focus Sessions</li>
+            <li class="planFeature">Full AI Prioritization Engine</li>
+            <li class="planFeature">Multi-Device Sync</li>
+            <li class="planFeature">Deep Work Insights</li>
+            <li class="planFeature">Offline Mode</li>
+            <li class="planFeature">Priority Email Support</li>
+          </ul>
+          <button class="button priceButton">Get Plan</button>
+        </div>
+        <div class="priceCard priceCard--business">
+          <div class="priceHeadingSpans">
+            <span class="planCardHeading">Business</span>
+            <span class="planPrice planPrice-business">$49</span>
+            <span class="planPriceTime">/mo</span>
+          </div>
+          <ul class="planFeaturesList">
+            <li class="planFeature">Everything in Pro, plus:</li>
+            <li class="planFeature">Team Dashboard</li>
+            <li class="planFeature">Administrative Console</li>
+            <li class="planFeature">Custom Integrations</li>
+            <li class="planFeature">SSO & Advanced Security</li>
+            <li class="planFeature">Dedicated Success Manager</li>
+            <li class="planFeature">24/7 Phone & Chat Support</li>
+          </ul>
+          <button class="button priceButton">Get Plan</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <h1 class="sectionHeading">Our Mission</h1>
+      <div class="aboutContainer">
+        <div class="aboutLeft">
+          <h2 class="aboutHeading">"We Build tools for the deep thinkers"</h2>
+          <p class="aboutSubHeading1">
+            In a world of constant pings and infinite scrolls, we’ve lost the
+            ability to go deep. FlowState wasn’t built to be another
+            'productivity app'—it was built to be a sanctuary for your mind.
+          </p>
+          <p class="aboutSubHeading2">
+            Our team of designers and neuroscientists spent two years
+            obsessing over how to reduce cognitive load. The result is a
+            workspace that anticipates your needs, silences the noise, and
+            lets you do your best work.
+          </p>
+        </div>
+
+        <div class="aboutRight">
+          <div class="aboutRightBg"></div>
+
+          <div class="floatingCard codeCard">
+            <img src="images/aboutRightBackImg.png" alt="App code screenshot" />
+          </div>
+
+          <div class="floatingIcon clockIcon">🕒</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="contactHeading">Get In Touch</h2>
+
+      <div class="contactContainer">
+
+        <div class="contactInfo">
+          <h3>Let's Build Something Amazing.</h3>
+
+          <p>
+            Whether you have a question, a project idea,
+            or just want to say hello, we'd love to hear from you.
+          </p>
+
+          <div class="contactCard">
+            <span>📧 hello@flowstate.ai</span>
+          </div>
+
+          <div class="contactCard">
+            <span>📱 +91 98765 43210</span>
+          </div>
+
+          <div class="contactCard">
+            <span>📍 Pune, India</span>
+          </div>
+        </div>
+
+        <form class="contactForm">
+
+          <input type="text" placeholder="Your Name" required>
+
+          <input type="email" placeholder="Your Email" required>
+
+          <textarea rows="6" placeholder="Tell us about your project..." required></textarea>
+
+        </form>
+
+      </div>
+
+
+      <button class="contactButton button">
+        Send Message
+      </button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
