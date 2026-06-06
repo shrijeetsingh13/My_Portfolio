@@ -5,6 +5,8 @@ const planPriceStarter = document.querySelector(".planPrice-starter");
 const planPricePro = document.querySelector(".planPrice-pro");
 const planPriceBusiness = document.querySelector(".planPrice-business");
 const planPrices = document.querySelectorAll(".planPriceTime");
+const waBtn = document.querySelector(".contactOnWhatsappButton");
+const messageArea = document.querySelector(".contactFormTextarea");
 
 themeSlider.addEventListener("click", function () {
   const root = document.documentElement;
@@ -49,4 +51,11 @@ pricingSliderBtns.forEach((button, index) => {
       planPrices.forEach((price) => (price.textContent = "/mo"));
     }
   });
+});
+
+waBtn.addEventListener("click", () => {
+  const phoneNumber = "919834561689";
+  const message = "Hi, I'm " + document.querySelector(".nameInput").value + ". " + messageArea.value;
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
 });
