@@ -584,7 +584,7 @@ body {
 
 .priceCard--business {
   --card-border: linear-gradient(135deg, #facc15, #f59e0b, #d97706);
-  background: linear-gradient(rgba(10, 15, 30, 0.92), rgba(10, 15, 30, 0.92));
+  background: rgba(255, 255, 255, 0.04);
   /* radial-gradient(circle at top, rgba(250, 204, 21, 0.25), transparent 70%); */
 }
 
