@@ -83,6 +83,11 @@ html {
     color 0.7s ease;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   font-family: "Lato", sans-serif;
   background: var(--bg-main);
@@ -104,6 +109,35 @@ body {
   position: fixed;
   top: 0;
   z-index: 1000;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: var(--text-main);
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+/* Animate into X */
+
+.hamburger.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
 }
 
 .logo {
@@ -260,8 +294,8 @@ body {
 .heroImageHolder {
   flex: 1;
   display: block;
-  width: 500px;
-  height: 500px;
+  width: min(500px, 90vw);
+  height: min(500px, 90vw);
   margin: auto;
 }
 
@@ -425,7 +459,7 @@ body {
 }
 
 .pricing {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -847,8 +881,243 @@ body {
   transition: color 0.3s ease;
 }
 
-.or{
+.or {
   color: var(--text-secondary);
   font-weight: 500;
   font-size: 1.2rem;
+}
+
+@media (max-width: 1024px) {
+  .heroSection {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .leftHeroContent,
+  .rightHeroContent {
+    width: 100%;
+    align-items: center;
+    padding: 1.5rem;
+  }
+
+  .heroImageHolder {
+    width: min(350px, 80vw);
+    height: min(350px, 80vw);
+  }
+
+  .bentoGrid {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    width: min(90%, 900px);
+  }
+
+  .bentoBox1,
+  .bentoBox2,
+  .bentoBox3,
+  .bentoBox4 {
+    grid-column: auto;
+    grid-row: auto;
+    min-height: 250px;
+  }
+
+  .pricingPlanCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(90%, 760px);
+  }
+
+  .priceCard--pro {
+    transform: none;
+  }
+
+  .aboutContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .aboutLeft {
+    align-items: center;
+    text-align: center;
+  }
+
+  .aboutRight {
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+  }
+
+  .contactContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    width: min(90%, 720px);
+  }
+
+  .contactButton,
+  .contactOnWhatsappButton {
+    align-self: center;
+  }
+}
+
+@media (max-width: 1060px) {
+  .navbar {
+    display: grid;
+    grid-template-columns: auto auto 1fr;
+    align-items: center;
+    gap: 12px;
+    padding: 1rem;
+    justify-items: unset;
+  }
+
+  .hamburger {
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .logo {
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+  }
+
+  .slider-container {
+    grid-column: 3;
+    grid-row: 1;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cornerBtns {
+    display: none;
+  }
+
+  .navLinks {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    width: 100%;
+  }
+
+  .navLinks.active {
+    max-height: 350px;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .navbar {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .slider-container span {
+    display: none;
+  }
+
+  .heroSection {
+    margin-top: 90px;
+  }
+
+  .leftHeroContent,
+  .rightHeroContent {
+    padding: 1rem;
+  }
+
+  .bentoGrid {
+    grid-template-columns: 1fr;
+    width: 90%;
+    gap: 1rem;
+  }
+
+  .pricingPlanCards {
+    grid-template-columns: 1fr;
+    width: min(90%, 420px);
+  }
+
+  .priceCard {
+    min-height: auto;
+  }
+
+  .priceCard--pro::after {
+    position: static;
+    display: inline-block;
+    width: fit-content;
+    margin-bottom: 1rem;
+  }
+
+  .contactInfo,
+  .contactForm {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .heroHeading {
+    font-size: 1.8rem;
+  }
+
+  .heroSubHeading,
+  .bentoBoxSubHeading,
+  .aboutSubHeading1,
+  .aboutSubHeading2 {
+    font-size: 0.95rem;
+  }
+
+  .aboutRight {
+    display: none;
+  }
+
+  .heroImageHolder {
+    width: min(240px, 72vw);
+    height: min(240px, 72vw);
+  }
+
+  .logo {
+    font-size: 1.3rem;
+  }
+
+  .sectionHeading,
+  .pricingHeading,
+  .aboutHeading,
+  .contactHeading {
+    font-size: 1.6rem;
+  }
+
+  .priceCard {
+    min-height: auto;
+  }
+
+  .floatingCard {
+    display: none;
+  }
+
+  .floatingIcon {
+    display: none;
+  }
+
+  .contactCard {
+    overflow-wrap: anywhere;
+  }
+
+  .button,
+  .ghostBtn {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+  }
 }

@@ -7,6 +7,15 @@ const planPriceBusiness = document.querySelector(".planPrice-business");
 const planPrices = document.querySelectorAll(".planPriceTime");
 const waBtn = document.querySelector(".contactOnWhatsappButton");
 const messageArea = document.querySelector(".contactFormTextarea");
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.querySelector(".navLinks");
+const cornerBtns = document.querySelector(".cornerBtns");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navLinks.classList.toggle("active");
+  cornerBtns.classList.toggle("active");
+});
 
 themeSlider.addEventListener("click", function () {
   const root = document.documentElement;
