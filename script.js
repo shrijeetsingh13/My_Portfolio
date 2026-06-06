@@ -55,7 +55,16 @@ pricingSliderBtns.forEach((button, index) => {
 
 waBtn.addEventListener("click", () => {
   const phoneNumber = "919834561689";
-  const message = "Hi, I'm " + document.querySelector(".nameInput").value + ". " + messageArea.value;
-  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-  window.open(url, "_blank");
+  const message =
+    "Hi, I'm " +
+    document.querySelector(".nameInput").value +
+    ". " +
+    messageArea.value;
+  if (!messageArea.value || !document.querySelector(".nameInput").value) {
+    alert("Please enter your name and message before contacting on WhatsApp.");
+    return;
+  } else {
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank");
+  }
 });
